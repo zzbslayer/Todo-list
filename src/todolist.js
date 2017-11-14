@@ -1,7 +1,7 @@
 var todolist = new Vue ({
     el: '#todolist',
     data: {
-        newitem : '',
+        newitem: '',
         todo:[
             {label: "Homework of Father Ren", done: true},
             {label: "Lab4", done: false},
@@ -10,7 +10,7 @@ var todolist = new Vue ({
     },
     methods: {
         addItem: function() {
-            this.todo.push({lable: this.newitem, done: false});
+            this.todo.push({label: this.newitem, done: false});
             this.newitem = ''
         },
         deleteItem: function(item) {

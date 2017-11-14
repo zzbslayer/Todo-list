@@ -28,6 +28,12 @@
                 </li>
             </ul>
         </template>
+
+        <form name="newform" v-on:submit.prevent="addItem" >
+            <label for="newitem">Add to todo list</label>
+            <input type="text" name="newitem" id="newitem" v-model="newitem">
+            <button type="submit">Add item</button>
+        </form>
     </main>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
