@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/todolist.css", rel="stylesheet">
+</head>
+<body>
+    <main id="todolist">
+        <h1>Todo List
+            <span>Give you a well-prepared life</span>
+        </h1>
+        <template v-if="todo.length">
+            <ul>
+                <li v-for="item in todo" v-bind:class="item.done ? 'done' : ''">
+                    <span class="label">{{item.label}}</span>
+                    <div class="actions">
+                        <button class="btn-picto" type="button" v-on:click="markItem(item)" v-bind:aria-label="item.done ? 'Undone' : 'Done'" v-bind:title="item.done ? 'Undone' : 'Done'" >
+                            <i aria-hidden="true" class="material-icons">{{ item.done ? 'check_box' : 'check_box_outline_blank'}}</i>
+                        </button>
+                        <button class="btn-picto" type="button" v-on:click="deleteItem(item)" aria-label="Delete" title="Delete">
+                            <i aria-hidden="true" class="material-icons">delete</i>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </template>
+    </main>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+    <script src="src/todolist.js"></script>
+</body>
+</html>
